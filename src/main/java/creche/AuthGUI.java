@@ -1,5 +1,8 @@
 package creche;
 
+// mvn clean install
+// mvn exec:java -Dexec.mainClass="creche.AuthGUI"
+
 import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.Font;
@@ -244,10 +247,19 @@ public class AuthGUI extends JFrame implements ActionListener {
         }
     }
 
-    private void ouvrirInterfacePrincipale(Utilisateur utilisateur) {
-        System.out.println("Ouverture de l'interface principale pour: " + utilisateur.getNomUtilisateur() + " (" + utilisateur.getRole() + ")");
-        // TODO: Launch the main app GUI here
+// In AuthGUI.java
+
+private void ouvrirInterfacePrincipale(Utilisateur utilisateur) {
+    System.out.println("Bienvenue " + utilisateur.getNomUtilisateur() + "!");
+    // TODO: Launch the main app GUI here based on the user's role
+    if (utilisateur.getRole().equals("administrateur")) {
+        SwingUtilities.invokeLater(EnfantGUI::new);
+        this.dispose(); // Close the authentication window
+    } else {
+        // Open a different interface for other roles
+        System.out.println("Bienvenue " + utilisateur.getNomUtilisateur() + " (" + utilisateur.getRole() + ")!");
     }
+}
 
     private void clearSignupFields() {
         signupNomUtilisateurField.setText("");
