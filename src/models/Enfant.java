@@ -1,17 +1,17 @@
 package model;
-public class Child {
+public class Enfant {
     public int id;
-    public String name;
+    public String nom;
     public int age;
     public String allergies;
-    public String medicalHistory;
-    public int educatorId;
+    public String historiqueMedical;
+    public int idEnseignat;
 
-    public Child(String name, int age, String allergies, String medicalHistory, int educatorId) {
-        this.name = name;
+    public Enfant(String name, int age, String allergies, String medicalHistory, int educatorId) {
+        this.nom = name;
         this.age = age;
         this.allergies = allergies;
-        this.medicalHistory = medicalHistory;
-        this.educatorId = educatorId;
+        this.historiqueMedical = medicalHistory;
+        this.idEnseignat = educatorId;
     }
 }

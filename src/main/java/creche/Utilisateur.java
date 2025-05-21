@@ -1,20 +1,23 @@
-// Utilisateur.java
+package creche;
+
 public class Utilisateur {
     private int idUtilisateur;
     private String nomUtilisateur;
     private String motDePasse;
     private String role;
     private String dateCreation;
+    private boolean actif; // Add this field
 
-    public Utilisateur(int idUtilisateur, String nomUtilisateur, String motDePasse, String role, String dateCreation) {
+    public Utilisateur(int idUtilisateur, String nomUtilisateur, String motDePasse, String role, String dateCreation, boolean actif) {
         this.idUtilisateur = idUtilisateur;
         this.nomUtilisateur = nomUtilisateur;
         this.motDePasse = motDePasse;
         this.role = role;
         this.dateCreation = dateCreation;
+        this.actif = actif;
     }
 
-    // Getters et setters
+    // Getters et setters (include for 'actif')
     public int getIdUtilisateur() {
         return idUtilisateur;
     }
@@ -55,6 +58,14 @@ public class Utilisateur {
         this.dateCreation = dateCreation;
     }
 
+    public boolean isActif() { // Add this getter
+        return actif;
+    }
+
+    public void setActif(boolean actif) { // Add this setter
+        this.actif = actif;
+    }
+
     @Override
     public String toString() {
         return "Utilisateur{" +
@@ -62,6 +73,7 @@ public class Utilisateur {
                ", nomUtilisateur='" + nomUtilisateur + '\'' +
                ", role='" + role + '\'' +
                ", dateCreation='" + dateCreation + '\'' +
+               ", actif=" + actif +
                '}';
     }
 }
